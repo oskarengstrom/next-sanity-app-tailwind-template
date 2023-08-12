@@ -9,9 +9,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }) {
-  const slug = params.page.join("/");
-  const page = await cachedClient(pageQuery, { page: slug });
-  // const page = await client.fetch(pageQuery, { page: slug });
+  const page = await cachedClient(pageQuery, { page: params.page.join("/") });
 
   if (!page) {
     // TODO: 404 page / notFound?

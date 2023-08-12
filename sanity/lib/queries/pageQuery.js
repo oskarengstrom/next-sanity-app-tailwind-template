@@ -8,7 +8,6 @@ _type == "page"
     ...,
     modules[]{
         ...,
-        "atPageSlug": $page,
         "atPageId": ^._id,
     }
 }[0]`;
