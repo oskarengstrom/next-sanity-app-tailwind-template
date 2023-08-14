@@ -23,10 +23,8 @@ export async function generateMetadata({ params, searchParams }, parent) {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="light">
-      <body className={classNames(inter.className, "text-primary bg-primary")}>
-        {children}
-      </body>
+    <html lang="en" className="">
+      <body className={classNames(inter.className, "")}>{children}</body>
     </html>
   );
 }

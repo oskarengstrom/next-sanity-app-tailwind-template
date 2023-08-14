@@ -18,7 +18,7 @@ export default async function TestModule({ _type, _key, atPageId, ...props }) {
   });
 
   return (
-    <section className={classNames(true ? "light" : "dark", "bg-primary")}>
+    <section className={classNames(false ? "light" : "dark", "bg-primary")}>
       <div className="xl:container xl:mx-auto px-4 xl:px-0 py-10">
         {data.title}
       </div>

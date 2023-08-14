@@ -7,7 +7,7 @@ export default function SiteLayout({ children }) {
     : undefined;
 
   return (
-    <div className="">
+    <div className="light text-primary bg-primary">
       <Header />
       {children}
       {preview && (
