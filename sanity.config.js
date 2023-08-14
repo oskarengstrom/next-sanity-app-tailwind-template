@@ -1,7 +1,3 @@
-/**
- * This configuration is used to for the Sanity Studio that’s mounted on the `/app/studio/[[...index]]/page.jsx` route
- */
-
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
@@ -9,8 +5,6 @@ import { colorInput } from "@sanity/color-input";
 // import {media} from 'sanity-plugin-media'
 import { unsplashImageAsset } from "sanity-plugin-asset-source-unsplash";
 import { vercelDeployTool } from "sanity-plugin-vercel-deploy";
-
-// Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schema } from "./sanity/schema";
 

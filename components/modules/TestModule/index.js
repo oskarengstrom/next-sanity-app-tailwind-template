@@ -1,4 +1,5 @@
 import { getClient } from "@/sanity/lib/getClient";
+import classNames from "classnames";
 import { groq } from "next-sanity";
 import React from "react";
 
@@ -17,9 +18,10 @@ export default async function TestModule({ _type, _key, atPageId, ...props }) {
   });
 
   return (
-    <div>
-      (testmodule):
-      <span>{data.title}</span>
-    </div>
+    <section className={classNames(true ? "light" : "dark", "bg-primary")}>
+      <div className="xl:container xl:mx-auto px-4 xl:px-0 py-10">
+        {data.title}
+      </div>
+    </section>
   );
 }

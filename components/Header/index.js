@@ -27,10 +27,10 @@ export default async function Header() {
   // serverLog(data, 3);
 
   return (
-    <div className="p-4 flex justify-between">
+    <div className="p-4 flex justify-between items-center">
       <div>{data.title}</div>
       <input type="text" placeholder="Search" className="text-black" />
-      <div className="flex gap-3">
+      <div className="flex gap-3 items-center">
         {data.navigationItems.map((item) => (
           <Link key={item._key} {...getLinkProps(item.link)}>
             {item.label}
