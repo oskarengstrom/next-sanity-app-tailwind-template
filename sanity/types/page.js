@@ -1,3 +1,5 @@
+import themeField from "./utils/themeField";
+
 export default {
   name: "page",
   title: "Page",
@@ -17,6 +19,7 @@ export default {
         maxLength: 96,
       },
     },
+    themeField,
     {
       name: "modules",
       title: "Modules",

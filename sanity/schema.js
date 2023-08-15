@@ -1,3 +1,4 @@
+import theme from "./types/entities/theme";
 import testModule from "./types/modules/testModule";
 import header from "./types/navigation/header";
 import page from "./types/page";
@@ -8,6 +9,7 @@ import universalLink from "./types/utils/universalLink";
 export const schema = {
   types: [
     header,
+    theme,
 
     // pages
     page,

@@ -6,6 +6,7 @@ _type == "page"
 && slug.current == $page]
 {
     ...,
+    theme,
     modules[]{
         ...,
         "atPageId": ^._id,

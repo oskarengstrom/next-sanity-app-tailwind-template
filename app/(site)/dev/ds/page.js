@@ -8,7 +8,7 @@ export default function DS() {
         <div className="h-10 col-[2_/_-2] bg-red-500" />
       </div> */}
 
-      <div className="dark bg-primary">
+      <div className="theme-dark bg-primary">
         <div className="xl:container xl:mx-auto px-4 xl:px-0 py-10">
           Responsive centered section with padding
         </div>

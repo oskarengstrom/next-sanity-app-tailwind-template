@@ -1,4 +1,7 @@
 import Header from "@/components/Header";
+import { getClient } from "@/sanity/lib/getClient";
+import { pageQuery } from "@/sanity/lib/queries/pageQuery";
+import classNames from "classnames";
 import { draftMode } from "next/headers";
 
 export default function SiteLayout({ children }) {
@@ -7,7 +10,9 @@ export default function SiteLayout({ children }) {
     : undefined;
 
   return (
-    <div className="light text-primary bg-primary">
+    <div
+    // className={"text-primary bg-primary"}
+    >
       <Header />
       {children}
       {preview && (
