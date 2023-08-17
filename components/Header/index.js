@@ -18,10 +18,7 @@ const headerQuery = groq`*[_type == "header"][0]{
 }`;
 
 export default async function Header() {
-  const preview = draftMode().isEnabled
-    ? { token: process.env.SANITY_API_READ_TOKEN }
-    : undefined;
-  const client = getClient(preview);
+  const client = getClient();
   const data = await client.fetch(headerQuery);
 
   // serverLog(data, 3);

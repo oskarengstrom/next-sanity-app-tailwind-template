@@ -11,6 +11,14 @@ export default {
       title: "Title",
       type: "string",
     },
+    {
+      name: "picture",
+      title: "Picture",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
   ],
   preview: {
     select: {

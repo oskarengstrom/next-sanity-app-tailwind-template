@@ -1,7 +1,11 @@
 import { createClient } from "@sanity/client";
 import { apiVersion, dataset, projectId, useCdn } from "../env";
+import { draftMode } from "next/headers";
 
-export function getClient(preview) {
+export function getClient() {
+  const preview = draftMode().isEnabled
+    ? { token: process.env.SANITY_API_READ_TOKEN }
+    : undefined;
   const client = createClient({
     projectId,
     dataset,

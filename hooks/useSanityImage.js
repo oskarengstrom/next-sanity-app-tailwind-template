@@ -13,7 +13,7 @@
 // }}
 // />
 
-import { client } from "@/sanity.client";
+import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { useMemo } from "react";
 
@@ -60,17 +60,17 @@ export default function useSanityImage(image) {
       width: ogWidth,
       height: ogHeight,
       aspectRatio,
-    } = getOriginalDimensions(image.asset._ref);
+    } = getOriginalDimensions(image.asset._id);
 
     const crop = image.crop || { top: 0, bottom: 0, left: 0, right: 0 };
     const width = ogWidth * (1 - (crop.left + crop.right));
     const height = ogHeight * (1 - (crop.top + crop.bottom));
 
-    const oldHotspot = image.hotspot || { x: 0.5, y: 0.5 };
+    // const oldHotspot = image.hotspot || { x: 0.5, y: 0.5 };
 
-    const dimensions = { width: ogWidth, height: ogHeight };
-    const hotspot = calculateNewHotspot(dimensions, oldHotspot, crop);
+    // const dimensions = { width: ogWidth, height: ogHeight };
+    // const hotspot = calculateNewHotspot(dimensions, oldHotspot, crop);
 
-    return { imageProps: { src, width, height }, aspectRatio, hotspot };
+    return { imageProps: { src, width, height } };
   }, [builder, image, client]);
 }

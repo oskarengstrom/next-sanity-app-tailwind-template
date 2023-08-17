@@ -19,10 +19,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }) {
-  const preview = draftMode().isEnabled
-    ? { token: process.env.SANITY_API_READ_TOKEN }
-    : undefined;
-  const client = getClient(preview);
+  const client = getClient();
   const page = await client.fetch(pageQuery, {
     page: params.page.join("/"),
   });

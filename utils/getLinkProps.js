@@ -4,7 +4,6 @@ import { refResolver } from "./refResolver";
 // TODO make async and fetch ref if needed
 
 export const getLinkProps = (universalLink) => {
-  // console.log(universalLink);
   const isExternalLink = !!universalLink?.href;
   const isInternalReference = !!universalLink?.internalReference;
   const isMediaItem = !!universalLink?.mediaItem;
@@ -17,7 +16,6 @@ export const getLinkProps = (universalLink) => {
       return universalLink.href;
     }
     if (isInternalReference) {
-      console.log(isInternalReference);
       if (!universalLink.internalReference.slug?.current) {
         throw new Error(
           "Slug is missing on internalReference. Make sure to open all refs."
