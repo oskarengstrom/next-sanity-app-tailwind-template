@@ -1,7 +1,4 @@
 import Header from "@/components/Header";
-import { getClient } from "@/sanity/lib/getClient";
-import { pageQuery } from "@/sanity/lib/queries/pageQuery";
-import classNames from "classnames";
 import { draftMode } from "next/headers";
 
 export default function SiteLayout({ children }) {
@@ -16,7 +13,7 @@ export default function SiteLayout({ children }) {
       <Header />
       {children}
       {preview && (
-        <div className="fixed bottom-0 left-0 right-0 bg-green-300 opacity-85 flex justify-center text-sm py-1 text-green-700">
+        <div className="fixed z-50 bottom-0 left-0 right-0 bg-green-300 opacity-85 flex justify-center text-sm py-1 text-green-700">
           Preview Mode Enabled
         </div>
       )}

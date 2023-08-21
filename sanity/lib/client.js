@@ -8,6 +8,7 @@ export const client = createClient({
   dataset,
   projectId,
   useCdn,
+  perspective: "published",
 });
 
 export const cachedClient = cache(client.fetch.bind(client));

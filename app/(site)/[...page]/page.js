@@ -2,18 +2,18 @@ import PageComponent from "@/components/pages/PageComponent";
 import { getClient } from "@/sanity/lib/getClient";
 import { pagePathsQuery } from "@/sanity/lib/queries/pagePathsQuery";
 import { pageQuery } from "@/sanity/lib/queries/pageQuery";
-import { draftMode } from "next/headers";
+import { client } from "@/sanity/lib/client";
 
 export async function generateStaticParams() {
-  // BUG? TODO!
+  // @TODO
   // Currently, only published docs will be avail on preview,
   // but their content can be draft data.
+  // Also, draftMode is not avail on static generation?
   //
   // const preview = draftMode().isEnabled
   //   ? { token: process.env.SANITY_API_READ_TOKEN }
   //   : undefined;
 
-  const client = getClient();
   const pages = await client.fetch(pagePathsQuery);
   return pages;
 }

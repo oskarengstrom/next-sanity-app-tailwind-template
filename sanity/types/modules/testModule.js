@@ -19,6 +19,11 @@ export default {
         hotspot: true,
       },
     },
+    {
+      name: "link",
+      title: "Link",
+      type: "universalLink",
+    },
   ],
   preview: {
     select: {

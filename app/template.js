@@ -1,6 +1,6 @@
 import classNames from "classnames";
-import "./globals.css";
-import "./themes.css";
+import "@/app/globals.css";
+import "@/app/themes.css";
 import { Inter } from "next/font/google";
 import { getClient } from "@/sanity/lib/getClient";
 import { pageQuery } from "@/sanity/lib/queries/pageQuery";
@@ -25,26 +25,31 @@ export async function generateMetadata({ params, searchParams }, parent) {
   };
 }
 
-export default async function RootLayout({ children, ...props }) {
+export default async function RootTemplate({ children, ...props }) {
   // Complicated way to add theme to current route:
-  // const preview = draftMode().isEnabled
-  //   ? { token: process.env.SANITY_API_READ_TOKEN }
-  //   : undefined;
-  // const headersList = headers();
-  // const activePath = headersList.get("x-invoke-path");
-  // const client = getClient(preview);
-  // const page = await client.fetch(pageQuery, {
-  //   page: activePath.split("/")[1] === "" ? "home" : activePath.split("/")[1],
-  // });
+  const preview = draftMode().isEnabled
+    ? { token: process.env.SANITY_API_READ_TOKEN }
+    : undefined;
+  const headersList = headers();
+  const activePath = headersList.get("x-invoke-path");
+  const client = getClient(preview);
+  const page = await client.fetch(pageQuery, {
+    page: activePath.split("/")[1] === "" ? "home" : activePath.split("/")[1],
+  });
+
+  //   console.log(page);
+  console.log("- - -");
 
   return (
     <html lang="en" className="">
       <body
         className={classNames(
-          inter.className
-          // "theme-default bg-primary text-primary"
-          // page?.theme &&
-          //   classNames(page.theme || "theme-default", "bg-primary text-primary")
+          inter.className,
+          // "bg-slate-500"
+          // "min-h-screen"
+
+          page?.theme &&
+            classNames(page.theme || "theme-default", "bg-primary text-primary")
         )}
       >
         {children}
