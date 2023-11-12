@@ -24,6 +24,10 @@ export default async function Page({ params }) {
     page: params.page.join("/"),
   });
 
+  if (typeof window !== "undefined") {
+    window.document.body.classList.add("test");
+  }
+
   if (!page) {
     // TODO: 404 page / notFound?
     return <div>temp 404</div>;

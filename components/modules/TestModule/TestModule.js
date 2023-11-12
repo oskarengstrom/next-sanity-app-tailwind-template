@@ -1,28 +1,24 @@
+import Text from "@/components/Text";
 import getSanityImageProps from "@/utils/getSanityImageProps";
 import imageSizes from "@/utils/imageSizes";
+import serverLog from "@/utils/serverLog";
 import classNames from "classnames";
 import Image from "next/image";
 import React from "react";
 
-export default function TestModule({ data }) {
+export default async function TestModule({ data }) {
   const { picture } = data;
-
-  console.log(
-    imageSizes({
-      DEFAULT: "100vw",
-      md: "75vw",
-      lg: "50vw",
-    })
-  );
 
   return (
     <section
     // className={classNames(data.theme || "theme-default", "bg-primary")}
     >
       <div className="xl:container xl:mx-auto px-4 xl:px-0 py-10">
-        <h1>{data.title}</h1>
-        <div className="">
-          {picture && (
+        <Text variant="h2" as="a">
+          {data.title}
+        </Text>
+
+        {/* {picture && (
             <Image
               {...getSanityImageProps(picture)}
               sizes={imageSizes({
@@ -34,8 +30,7 @@ export default function TestModule({ data }) {
               blurDataURL={picture.asset.metadata.lqip}
               alt=""
             />
-          )}
-        </div>
+          )} */}
       </div>
     </section>
   );

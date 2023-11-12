@@ -1,15 +1,15 @@
-/* :root {
+:root {
   --bg-primary: #ffffff;
   --text-primary: #333333;
   --text-secondary: #555555;
   --text-disabled: #8c8c8c;
-} */
+}
 
 .theme-default {
-  --bg-primary: #ffffff;
-  --text-primary: #333333;
-  --text-secondary: #7d7d7d;
-  --text-disabled: #8c8c8c;
+  --bg-primary: var(--bg-primary);
+  --text-primary: var(--text-primary);
+  --text-secondary: var(--text-secondary);
+  --text-disabled: var(--text-disabled);
 }
 
 .theme-light-blue {
@@ -25,5 +25,4 @@
   --text-primary: #f1f1f1;
   --text-secondary: #b0b0b0;
   --text-disabled: #7a7a7a;
-  /* ... other variables for the dark theme */
 }

@@ -7,7 +7,7 @@
     @apply grid grid-cols-4 md:grid-cols-12 gap-4 xl:container xl:mx-auto;
   }
 
-  h1 {
+  /* h1 {
     @apply text-heading1;
   }
   h2 {
@@ -16,14 +16,11 @@
   h3 {
     @apply text-heading3;
   }
-  h4 {
-    @apply text-heading4;
-  }
   preamble {
     @apply text-preamble;
-  }
+  } */
 
-  .withMargins h1 {
+  /* .withMargins h1 {
     @apply mb-6;
   }
   .withMargins h2 {
@@ -32,17 +29,14 @@
   .withMargins h3 {
     @apply mt-10 mb-4;
   }
-  .withMargins h4 {
-    @apply mt-10 mb-4;
-  }
   .withMargins p {
     @apply mt-4 mb-4;
   }
   .withMargins preamble {
     @apply mt-4 mb-4;
-  }
+  } */
 
-  h1,
+  /* h1,
   h2,
   h3,
   h4,
@@ -62,5 +56,5 @@
   fieldset,
   legend {
     @apply antialiased text-primary;
-  }
+  } */
 }
