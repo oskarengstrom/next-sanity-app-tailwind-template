@@ -1,10 +1,7 @@
 import Header from "@/components/Header";
 import "@/app/globals.css";
 import "@/app/themes.css";
-import { draftMode, headers } from "next/headers";
-import { getClient } from "@/sanity/lib/getClient";
-import { pageQuery } from "@/sanity/lib/queries/pageQuery";
-import classNames from "classnames";
+import { twMerge } from "tailwind-merge";
 
 export const metadata = {
   title: "Next.js",
@@ -12,19 +9,9 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  const preview = draftMode().isEnabled
-    ? { token: process.env.SANITY_API_READ_TOKEN }
-    : undefined;
-  const headersList = headers();
-  const activePath = headersList.get("x-invoke-path");
-  const client = getClient(preview);
-  const page = await client.fetch(pageQuery, {
-    page: activePath.split("/")[1] === "" ? "home" : activePath.split("/")[1],
-  });
-
   return (
     <html lang="en">
-      <body className={classNames(page.theme || "theme-default", "bg-primary")}>
+      <body className={twMerge("theme-default bg-default")}>
         <Header />
         {children}
       </body>

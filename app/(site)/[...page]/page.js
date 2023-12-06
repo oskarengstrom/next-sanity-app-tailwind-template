@@ -1,7 +1,5 @@
 import PageComponent from "@/components/pages/PageComponent";
-import { getClient } from "@/sanity/lib/getClient";
 import { pagePathsQuery } from "@/sanity/lib/queries/pagePathsQuery";
-import { pageQuery } from "@/sanity/lib/queries/pageQuery";
 import { client } from "@/sanity/lib/client";
 
 export async function generateStaticParams() {
@@ -19,19 +17,14 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }) {
-  const client = getClient();
-  const page = await client.fetch(pageQuery, {
-    page: params.page.join("/"),
-  });
-
-  if (typeof window !== "undefined") {
-    window.document.body.classList.add("test");
-  }
-
-  if (!page) {
-    // TODO: 404 page / notFound?
-    return <div>temp 404</div>;
-  }
+  // // TODO: 404 page / notFound?
+  // const client = getClient();
+  // const page = await client.fetch(pageQuery, {
+  //   page: params.page.join("/"),
+  // });
+  // if (!page) {
+  //   return <div>temp 404</div>;
+  // }
 
   return <PageComponent page={page} />;
 }

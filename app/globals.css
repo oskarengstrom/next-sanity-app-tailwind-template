@@ -4,57 +4,22 @@
 
 @layer base {
   .grid-default {
-    @apply grid grid-cols-4 md:grid-cols-12 gap-4 xl:container xl:mx-auto;
+    @apply grid grid-cols-4 gap-x-4 md:grid-cols-12;
   }
+}
 
-  /* h1 {
-    @apply text-heading1;
+@layer utilities {
+  .inline-link {
+    @apply hover:underline hover:opacity-80;
   }
-  h2 {
-    @apply text-heading2;
-  }
-  h3 {
-    @apply text-heading3;
-  }
-  preamble {
-    @apply text-preamble;
-  } */
+}
 
-  /* .withMargins h1 {
-    @apply mb-6;
-  }
-  .withMargins h2 {
-    @apply mt-10 mb-6;
-  }
-  .withMargins h3 {
-    @apply mt-10 mb-4;
-  }
-  .withMargins p {
-    @apply mt-4 mb-4;
-  }
-  .withMargins preamble {
-    @apply mt-4 mb-4;
-  } */
+/* a,
+input,
+button {
+  @apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-default focus-visible:ring-opacity-30 focus-visible:ring-offset-0;
+} */
 
-  /* h1,
-  h2,
-  h3,
-  h4,
-  p,
-  span,
-  a,
-  button,
-  input,
-  textarea,
-  select,
-  label,
-  div,
-  ul,
-  li,
-  ol,
-  form,
-  fieldset,
-  legend {
-    @apply antialiased text-primary;
-  } */
+html {
+  @apply antialiased;
 }

@@ -1,4 +1,4 @@
-import Text from "@/components/Text";
+import Text from "@/components/ui/Text";
 import getSanityImageProps from "@/utils/getSanityImageProps";
 import imageSizes from "@/utils/imageSizes";
 import serverLog from "@/utils/serverLog";

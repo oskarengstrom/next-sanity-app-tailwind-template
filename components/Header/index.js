@@ -5,7 +5,7 @@ import { groq } from "next-sanity";
 import { draftMode } from "next/headers";
 import Link from "next/link";
 import React from "react";
-import Text from "../Text";
+import Text from "../ui/Text";
 
 const headerQuery = groq`*[_type == "header"][0]{
   ...,
